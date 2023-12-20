@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-08-05T21:04:31 BST" name="Suite" finished-at="2021-08-05T21:05:02 BST" duration-ms="31675">
+    <groups>
+    </groups>
+    <test started-at="2021-08-05T21:04:31 BST" name="Test" finished-at="2021-08-05T21:04:51 BST" duration-ms="20343">
+      <class name="uk.co.automationtesting.AddRemoveItemBasketTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:uk.co.automationtesting.AddRemoveItemBasketTest@759d26fb]" started-at="2021-08-05T21:04:31 BST" name="setup" finished-at="2021-08-05T21:04:34 BST" duration-ms="3052" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="addRemoveItem()[pri:0, instance:uk.co.automationtesting.AddRemoveItemBasketTest@759d26fb]" started-at="2021-08-05T21:04:34 BST" name="addRemoveItem" finished-at="2021-08-05T21:04:50 BST" duration-ms="16376" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [$45.23] but found [$45.24]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [$45.23] but found [$45.24]
+at org.testng.Assert.fail(Assert.java:99)
+at org.testng.Assert.failNotEquals(Assert.java:1037)
+at org.testng.Assert.assertEqualsImpl(Assert.java:140)
+at org.testng.Assert.assertEquals(Assert.java:122)
+at org.testng.Assert.assertEquals(Assert.java:629)
+at org.testng.Assert.assertEquals(Assert.java:639)
+at uk.co.automationtesting.AddRemoveItemBasketTest.addRemoveItem(AddRemoveItemBasketTest.java:63)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1540)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.access$000(SuiteRunner.java:28)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:418)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+at java.base/java.lang.Thread.run(Thread.java:834)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addRemoveItem -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:uk.co.automationtesting.AddRemoveItemBasketTest@759d26fb]" started-at="2021-08-05T21:04:50 BST" name="tearDown" finished-at="2021-08-05T21:04:51 BST" duration-ms="656" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- uk.co.automationtesting.AddRemoveItemBasketTest -->
+    </test> <!-- Test -->
+    <test started-at="2021-08-05T21:04:31 BST" name="Test2" finished-at="2021-08-05T21:05:02 BST" duration-ms="31675">
+      <class name="uk.co.automationtesting.OrderCompleteTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:uk.co.automationtesting.OrderCompleteTest@5d7148e2]" started-at="2021-08-05T21:04:31 BST" name="setup" finished-at="2021-08-05T21:04:34 BST" duration-ms="3104" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="endToEndTest()[pri:0, instance:uk.co.automationtesting.OrderCompleteTest@5d7148e2]" started-at="2021-08-05T21:04:34 BST" name="endToEndTest" finished-at="2021-08-05T21:05:02 BST" duration-ms="27884" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endToEndTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:uk.co.automationtesting.OrderCompleteTest@5d7148e2]" started-at="2021-08-05T21:05:02 BST" name="tearDown" finished-at="2021-08-05T21:05:02 BST" duration-ms="661" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- uk.co.automationtesting.OrderCompleteTest -->
+    </test> <!-- Test2 -->
+  </suite> <!-- Suite -->
+</testng-results>
