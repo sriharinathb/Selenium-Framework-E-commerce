@@ -2,14 +2,18 @@ package base;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class WebDriverInstance {
 
@@ -36,7 +40,12 @@ public class WebDriverInstance {
 
         if (prop.getProperty("browser").equals("chrome")) {
             WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+           // driver = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            //options.addArguments("--no-sandbox");
+            //options.addArguments("--headless");
+            //options.addArguments("--disable-dev-shm-usage");
+            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),options);
         } else {
             WebDriverManager.firefoxdriver().setup();
         }
