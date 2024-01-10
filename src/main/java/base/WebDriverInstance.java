@@ -2,14 +2,20 @@ package base;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class WebDriverInstance {
 
@@ -35,10 +41,18 @@ public class WebDriverInstance {
         prop.load(data);
 
         if (prop.getProperty("browser").equals("chrome")) {
-            WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
-        } else {
-            WebDriverManager.firefoxdriver().setup();
+            ChromeOptions options = new ChromeOptions();
+            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),options);
+        } else if (prop.getProperty("browser").equals("firefox")){
+            FirefoxOptions options=new FirefoxOptions();
+            driver=new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),options);
+        }
+        else if(prop.getProperty("browser").equals("edge")){
+            EdgeOptions options=new EdgeOptions();
+            driver=new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),options);
+        }
+        else{
+            System.exit(0);
         }
 
         driver.manage().window().maximize();

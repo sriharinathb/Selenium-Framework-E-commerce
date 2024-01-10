@@ -12,7 +12,7 @@ public class ShopContentPanel extends BasePage {
 
     public WebDriver driver;
 
-    By continueShoppingBtn = By.xpath("//button[contains(text(), 'Continue')]");
+    By continueShoppingBtn = By.xpath("//button[contains(text(),'Continue shopping')]");
     By checkoutBtn = By.xpath("//a[contains(text(),'Proceed to checkout')]");
 
     public ShopContentPanel() throws IOException {
