@@ -27,11 +27,11 @@ public class AddRemoveItemBasketTest extends Hooks {
     public void addRemoveItem() throws IOException, InterruptedException {
         // creating an object of the automationtesting.co.uk webpage
         Homepage home = new Homepage();
-
+        Thread.sleep(2000);
         //handle cookie visibility using JSE - added 20230217
         JavascriptExecutor jse = (JavascriptExecutor) getDriver();
         jse.executeScript("arguments[0].scrollIntoView()", home.getTestStoreLink());
-        home.getTestStoreLink().click();
+        jse.executeScript("arguments[0].click();", home.getTestStoreLink());
 
         // creating an object of the test store homepage
         ShopHomepage shopHome = new ShopHomepage();

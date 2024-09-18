@@ -3,7 +3,7 @@ package base;
 import java.io.IOException;
 
 import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 
 public class Hooks extends BasePage {
 
@@ -11,12 +11,12 @@ public class Hooks extends BasePage {
         super();
     }
 
-    @BeforeTest
+    @AfterSuite
     public void setup() throws IOException {
         getDriver().get(getUrl());
     }
 
-    @AfterTest
+    @AfterSuite
     public void tearDown() {
         WebDriverInstance.cleanupDriver();
     }

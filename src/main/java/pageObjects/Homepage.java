@@ -3,8 +3,11 @@ package pageObjects;
 import java.io.IOException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+
 
 import base.BasePage;
 
@@ -30,7 +33,7 @@ public class Homepage extends BasePage {
     By popupLink = By.linkText("POP UPS & ALERTS");
     By predictiveLink = By.linkText("PREDICTIVE SEARCH");
     By tablesLink = By.linkText("TABLES");
-    By testStoreLink = By.linkText("TEST STORE");
+    By testStoreLink = By.xpath("/html[1]/body[1]/div[1]/div[2]/div[1]/nav[1]/ul[1]/li[20]/a[1]");
     By aboutMeLink = By.linkText("ABOUT ME");
     By cookie = By.cssSelector(".close-cookie-warning > span");
 
@@ -41,6 +44,15 @@ public class Homepage extends BasePage {
     public WebElement getToggle() throws IOException {
         this.driver = getDriver();
         return driver.findElement(toggle);
+    }
+    
+    public WebElement getStoreLink() throws IOException, Exception {
+    	this.driver = getDriver();
+    	Thread.sleep(5000);
+    	JavascriptExecutor exe=(JavascriptExecutor)driver;
+    	WebElement element = driver.findElement(By.linkText("DATE PICKER"));
+    	exe.executeScript("arguments[0].scrollIntoView(true)", element);
+        return driver.findElement(testStoreLink);
     }
 
     public WebElement getHomepageLink() throws IOException {
@@ -124,6 +136,12 @@ public class Homepage extends BasePage {
     }
 
     public WebElement getTablesLink() throws IOException {
+        this.driver = getDriver();
+        return driver.findElement(tablesLink);
+    }
+    
+  //a[@class='toggle']
+    public WebElement getToggleLink() throws IOException {
         this.driver = getDriver();
         return driver.findElement(tablesLink);
     }

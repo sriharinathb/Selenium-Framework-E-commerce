@@ -41,8 +41,9 @@ public class WebDriverInstance {
         prop.load(data);
 
         if (prop.getProperty("browser").equals("chrome")) {
-            ChromeOptions options = new ChromeOptions();
-            driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),options);
+           // ChromeOptions options = new ChromeOptions();
+          //  driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),options);
+        	driver=new ChromeDriver();
         } else if (prop.getProperty("browser").equals("firefox")){
             FirefoxOptions options=new FirefoxOptions();
             driver=new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"),options);
